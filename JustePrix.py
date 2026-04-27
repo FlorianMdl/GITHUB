@@ -1,5 +1,5 @@
 """
-Juste prix (Mode difficile)
+Jeu -- Juste prix (Mode difficile)
 """
 
 import random
