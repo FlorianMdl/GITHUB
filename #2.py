@@ -1,19 +1,33 @@
 """
-Jeu du juste prix 
+Juste prix (Mode difficile)
 """
 
-variable_secrete = 13
-choix_utilisateur = 0
+import random
 
-print("Jeu du juste prix -- Tu dois deviner le nombre secret (entre 1 et 20)\n")
+variable_secrete = random.randint(1, 20)
+nombre_essais_max = 7
+gagne = False # Un "drapeau" (flag) pour savoir si on a gagné
 
-while choix_utilisateur != variable_secrete: 
-    choix_utilisateur = int(input("Votre choix: "))
+print("\n-- Jeu du juste prix (Difficile) --")
+print(f"Devine le nombre entre 1 et 20 en {nombre_essais_max} essais.\n")
+
+for i in range(nombre_essais_max):
+    try:
+        choix_utilisateur = int(input(f"Essai n°{i+1} - Votre choix : "))
+    except ValueError:
+        print("Erreur ! Tu dois taper un nombre entier.")
+        continue 
+
     if choix_utilisateur < variable_secrete: 
         print("C'est plus !")
     elif choix_utilisateur > variable_secrete:
         print("C'est moins !")
+    else:
+        print(f"Bravo, vous avez gagné en {i+1} coups !")
+        gagne = True
+        break
 
-print("Bravo, vous avez gagné !")
+if not gagne:
+    print(f"\nDommage ! Le nombre secret était {variable_secrete}.")
 
         
