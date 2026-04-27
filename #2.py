@@ -6,7 +6,7 @@ import random
 
 variable_secrete = random.randint(1, 20)
 nombre_essais_max = 7
-gagne = False # Un "drapeau" (flag) pour savoir si on a gagné
+gagne = False 
 
 print("\n-- Jeu du juste prix (Difficile) --")
 print(f"Devine le nombre entre 1 et 20 en {nombre_essais_max} essais.\n")
