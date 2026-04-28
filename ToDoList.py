@@ -11,12 +11,15 @@ while True:
     print("3. Supprimer une tâche.")
     print("4. Quitter.\n")
 
-    choix = int(input("Choix (1 - 4): "))
+    try:
+        choix = int(input("Choix (1 - 4): "))
+    except ValueError:
+        print("Tu dois choisir un nombre entrer 1 et 4 !")
 
     if choix == 1:
-        add_tache = str(input("Tâche à ajouter: "))
-        ma_liste.append(add_tache)
-        print("Tâche ajoutée !")
+            add_tache = str(input("Tâche à ajouter: "))
+            ma_liste.append(add_tache)
+            print("Tâche ajoutée !")
 
     elif choix == 2:
         print("Liste de tes tâches: ")
@@ -24,9 +27,9 @@ while True:
             print(f"{clé}. {valeur}")
 
     elif choix == 3: 
-        remove_tache = str(input("Tâche à supprimer: "))
-        ma_liste.remove(remove_tache)
-        print("Tâche supprimée !")    
+            remove_tache = str(input("Tâche à supprimer: "))
+            ma_liste.remove(remove_tache)
+            print("Tâche supprimée !")    
 
     elif choix == 4:
         break
